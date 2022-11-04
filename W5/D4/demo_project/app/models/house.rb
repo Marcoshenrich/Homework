@@ -1,8 +1,9 @@
 class House < ApplicationRecord
-    has_many (:persons,
-    class_name: 'Person',
+    has_many :residents,
+    primary_key: :id,
     foreign_key: :house_id,
-    primary_key: :id)
+    class_name: :Person
+    
 
     validates :address, presence: true
 end
